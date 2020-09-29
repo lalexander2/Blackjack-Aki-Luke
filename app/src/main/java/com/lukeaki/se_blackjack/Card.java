@@ -21,9 +21,20 @@ public class Card {
 
     private static String[] suits = {"Clubs", "Diamonds", "Spades","Hearts"};
 
-
+    // To String Method 
     public String toString()
     {
         return this.rank + " of " + this.suit;
+    }
+
+    /
+    // Card  Setter 
+    Card(int Suit; int values;){
+
+        this.rank = values;
+        this.suit = suit;
+        
+
+
     }
 }
