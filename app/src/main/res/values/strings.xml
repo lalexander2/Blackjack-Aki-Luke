@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">se-blackjack</string>
+
+    <string name="hit">HIT</string>
+    <string name="stop">STOP</string>
+    <string name="new_game">New Game</string>
+
+    <string name="player_hand">You</string>
+    <string name="dealer_hand">Dealer</string>
+    <string name="total">Value: </string>
+
+    <string name="you_win">You win!</string>
+    <string name="you_lose">You lose!</string>
+
+    <string name="blackjack">Blackjack</string>
+    <string name="bust">Bust</string>
+
 </resources>

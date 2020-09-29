@@ -1,18 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context="com.lukeaki.se_blackjack.MainActivity">
+
+    <View
+        android:id = "@+id/back_color"
+        style = "@style/ViewStyle"
+
+        android:background = "@color/darkGreen"
+        />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:id = "@+id/dealer_card_1"
+        style = "@style/CardStyle"
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_toLeftOf="@id/dealer_card_2"
+        android:layout_toStartOf="@id/dealer_card_2" />
+
+    <TextView
+        android:id = "@+id/dealer_card_2"
+        style = "@style/CardStyle"
+
+        android:layout_toLeftOf="@id/dealer_card_3"
+        android:layout_toStartOf="@id/dealer_card_3" />
+
+    <TextView
+        android:id = "@+id/dealer_card_3"
+        style = "@style/CardStyle"
+
+        android:layout_centerHorizontal="true"
+        />
+
+    <TextView
+        android:id = "@+id/dealer_card_4"
+        style = "@style/CardStyle"
+
+        android:layout_toRightOf="@id/dealer_card_3"
+        android:layout_toEndOf="@id/dealer_card_3" />
+
+    <TextView
+        android:id = "@+id/dealer_card_5"
+        style = "@style/CardStyle"
+
+        android:layout_toRightOf="@id/dealer_card_4"
+        android:layout_toEndOf="@id/dealer_card_4" />
+
+
+    <TextView
+        android:id = "@+id/player_card_1"
+        style = "@style/PlayerCard"
+
+        android:layout_toLeftOf="@id/player_card_2"
+        android:layout_toStartOf="@id/player_card_2"
+        android:layout_below="@id/dealer_card_1"
+        />
+
+    <TextView
+        android:id = "@+id/player_card_2"
+        style = "@style/PlayerCard"
+
+        android:layout_toLeftOf="@id/player_card_3"
+        android:layout_toStartOf="@id/player_card_3"
+        android:layout_below="@id/dealer_card_2"
+        />
+
+    <TextView
+        android:id = "@+id/player_card_3"
+        style = "@style/PlayerCard"
+
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/dealer_card_3"
+        />
+
+    <TextView
+        android:id = "@+id/player_card_4"
+        style = "@style/PlayerCard"
+
+        android:layout_toRightOf="@id/player_card_3"
+        android:layout_toEndOf="@id/player_card_3"
+        android:layout_below="@id/dealer_card_4"
+        />
+
+    <TextView
+        android:id = "@+id/player_card_5"
+        style = "@style/PlayerCard"
+
+        android:layout_toRightOf="@id/player_card_4"
+        android:layout_toEndOf="@id/player_card_4"
+        android:layout_below="@id/dealer_card_5"
+        />
+</RelativeLayout>

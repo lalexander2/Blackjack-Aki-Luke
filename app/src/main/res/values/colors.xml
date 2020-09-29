@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <!-- Default colors -->
     <color name="colorPrimary">#6200EE</color>
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
+
+    <!-- Colors we added -->
+    <color name="darkGreen">#004400</color>
+    <color name="white">#FFFFFF</color>
 </resources>
