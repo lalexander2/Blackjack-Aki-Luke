@@ -32,7 +32,12 @@ public class Deck {
     {
         Deck Temp = new Deck();
         Collections.shuffle(Temp);
-        
+
+    // Draw a Card
+    public Card drawCard()
+    {
+        return deck.remove(0);
+    } 
 
         
     }
