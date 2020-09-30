@@ -8,20 +8,21 @@ import java.util.ArrayList;
 
 public class Player{
 
-    //Value of Players Hand
+    /* 
+    Initiating a Value of Cards
+    */
     int CardValue;
 
-    // Array for Card Objects
+    /* 
+    Initiating a collection of card objects
+    */
     private ArrayList<Card> hand;
 
 
-    //newcards();
-
     
-    // Player chooses between Hit or Stop buttons
-    // Hit Method
-    
-    //hit();
+    /* 
+    Method to add a card object to a players hand
+    */
     public int hit(Deck deck)
     {
         hand.add(deck.drawCard());
@@ -29,8 +30,9 @@ public class Player{
         return Cardsum;
 
     }
-
-    // HaNd Value 
+    /*
+     Method to calculate the Value of a Hand
+      */
     public int handValue(Hand hand)
     {
         // Initialize Hand Value 
@@ -43,6 +45,5 @@ public class Player{
         return Cardsum;
     }
 
-    // Stop Method
-    //stop();
+    
 }
