@@ -92,4 +92,38 @@
         android:layout_toEndOf="@id/player_card_4"
         android:layout_below="@id/dealer_card_5"
         />
+
+    <Button
+        android:id="@+id/hit_button"
+        style= "@style/ButtonStyle"
+
+        android:layout_below="@id/player_card_3"
+        android:text="@string/hit"
+        android:background="@color/yellow"
+        />
+
+    <Button
+        android:id="@+id/stop_button"
+        style = "@style/ButtonStyle"
+
+        android:layout_below="@id/player_card_3"
+        android:layout_alignParentRight="true"
+
+        android:text="@string/stop"
+        android:background="@color/red"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:id="@+id/newgame_button"
+        style="@style/ButtonStyle"
+
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/player_card_1"
+        android:layout_marginTop="60dp"
+
+        android:text="@string/new_game"
+        android:textSize="30sp"
+        android:background="@color/blue"
+        />
+
 </RelativeLayout>
