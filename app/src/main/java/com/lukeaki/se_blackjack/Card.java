@@ -34,7 +34,37 @@ public class Card {
         this.rank = values;
         this.suit = suit;
         
-
+        if (rank>10)
+        {
+            value=10;
+        }
+        else
+        value=rank;
 
     }
+    //Set Cards Value
+    public void SetValue(int x)
+    {
+        value = x;
+
+    }
+
+    // Method to getSuit
+    public int getSuit()
+    {
+        return suit;
+    }
+
+    //Method to getrank
+    public int getrank();
+    {
+        return rank;
+    }
+    //Method to getValue
+    public int getValue()
+    {
+        return value;
+    }
+
+    
 }
