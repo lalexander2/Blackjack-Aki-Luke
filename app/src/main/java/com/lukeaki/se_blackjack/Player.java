@@ -4,26 +4,21 @@
 
 package com.lukeaki.se_blackjack;
 
-public class Hand {
+public class Player{
 
     
     // Array for Card Objects
-    Card[]Hand;
+    private ArrayList<Card> hand;
 
-    // Give 2 Cards before each round
 
-    public Hand(Deck deck){
-        
-        // Array of Cards to hold players hand 
-        hand = new Card[2];
+    // addCard Method to add cards
+    public void addCard(Deck deck)
+    {
 
-        for (int i = 0; i < 2; i++)
+    for (int i = 0; i < 2; i++)
         hand[i] = deck[i];
-
-
+        deck.drawCard(i);                
     }
-
-
 
     //newcards();
 
@@ -31,9 +26,9 @@ public class Hand {
 
     // Player chooses between Hit or Stop buttons
     // Hit Method
-
+    
     //hit();
-    public void Hit(Deck deck)
+    public void hit(Deck deck)
     {
         hand.add(deck.drawCard());
     }
