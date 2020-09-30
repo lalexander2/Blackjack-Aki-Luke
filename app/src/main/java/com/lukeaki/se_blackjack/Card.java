@@ -6,20 +6,21 @@ package com.lukeaki.se_blackjack;
 
 public class Card {
     // Give a card a value
-    private int Value;
+    private int value;
 
     // Give a card a suit
-    private String Suit;
+    private String suit;
 
     // Give a card a rank
-    private char Rank;
+    private String rank;
 
-    //List of ranks of cards
-    private static String[] ranks = {"Ace","Two","Three","Four","Five","Six","Seven","Eight","Nine","Ten","Jack","Queen","King"};
-
-    // List of Suits of cards
-
-    private static String[] suits = {"Clubs", "Diamonds", "Spades","Hearts"};
+    // Card Constructor
+    Card(String suit, int value, String rank)
+    {
+        this.rank = rank;
+        this.suit = suit;
+        this.value = value;
+    }
 
     // To String Method 
     public String toString()
@@ -27,40 +28,35 @@ public class Card {
         return this.rank + " of " + this.suit;
     }
 
-    /
-    // Card  Setter 
-    Card(int Suit; int values;){
+    // Setters
 
-        this.rank = values;
-        this.suit = suit;
-        
-        if (rank>10)
-        {
-            value=10;
-        }
-        else
-        value=rank;
-
+    public void setSuit(String x)
+    {
+        suit = x;
     }
-    //Set Cards Value
-    public void SetValue(int x)
+
+    public void setRank(String x)
+    {
+        rank = x;
+    }
+
+    public void setValue(int x)
     {
         value = x;
-
     }
 
-    // Method to getSuit
-    public int getSuit()
+    // Getters
+
+    public String getSuit()
     {
         return suit;
     }
 
-    //Method to getrank
-    public int getrank();
+    public String getRank()
     {
         return rank;
     }
-    //Method to getValue
+
     public int getValue()
     {
         return value;
