@@ -6,31 +6,39 @@ package com.lukeaki.se_blackjack;
 
 public class Player{
 
-    
+    //Value of Players Hand
+    int CardValue;
+
     // Array for Card Objects
     private ArrayList<Card> hand;
 
 
-    // addCard Method to add cards
-    public void addCard(Deck deck)
-    {
-
-    for (int i = 0; i < 2; i++)
-        hand[i] = deck[i];
-        deck.drawCard(i);                
-    }
-
     //newcards();
 
     
-
     // Player chooses between Hit or Stop buttons
     // Hit Method
     
     //hit();
-    public void hit(Deck deck)
+    public int hit(Deck deck)
     {
         hand.add(deck.drawCard());
+        int Cardsum = hand.handValue();
+        return Cardsum;
+
+    }
+
+    // HaNd Value 
+    public int handValue(Hand hand)
+    {
+        // Initialize Hand Value 
+        int Cardsum;
+        
+        for (Card card : hand )
+        {
+            Cardsum += card.getValue();
+        }
+        return Cardsum;
     }
 
     // Stop Method
