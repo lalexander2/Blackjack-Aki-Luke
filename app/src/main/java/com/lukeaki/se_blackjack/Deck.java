@@ -18,7 +18,6 @@ public class Deck {
     public Deck()
     {
         cards = new ArrayList<Card>();
-        int index = 0;
 
         String suit = "";
         String rank = "";
@@ -100,7 +99,6 @@ public class Deck {
                 }
                 Card tempCard = new Card(suit, value, rank);
                 cards.add(tempCard);
-                index++;
             }
         }
         shuffle();

@@ -11,6 +11,7 @@
 
     <string name="you_win">You win!</string>
     <string name="you_lose">You lose!</string>
+    <string name="tie_game">It\'s a tie!</string>
 
     <string name="blackjack">Blackjack</string>
     <string name="bust">Bust</string>
