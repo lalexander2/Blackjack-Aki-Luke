@@ -3,7 +3,7 @@
 // Assignment 2: Blackjack
 
 package com.lukeaki.se_blackjack;
-import java.util.random;
+import java.util.*;
 
 public class Deck {
     // ATTRIBUTES
@@ -30,7 +30,10 @@ public class Deck {
     // shuffle() : Called on initialization and after each round
     public void shuffle()
     {
-        Random random = new Random();
-        Card 
+        Deck Temp = new Deck();
+        Collections.shuffle(Temp);
+        
+
+        
     }
 }
