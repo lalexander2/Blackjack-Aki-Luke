@@ -22,22 +22,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        /*
-        TextView dcard3 = findViewById(R.id.dealer_card_3);
-        dcard3.setVisibility(View.INVISIBLE);
-        TextView dcard4 = findViewById(R.id.dealer_card_4);
-        dcard4.setVisibility(View.INVISIBLE);
-        TextView dcard5 = findViewById(R.id.dealer_card_5);
-        dcard5.setVisibility(View.INVISIBLE);
-
-        TextView pcard3 = findViewById(R.id.player_card_3);
-        pcard3.setVisibility(View.INVISIBLE);
-        TextView pcard4 = findViewById(R.id.player_card_4);
-        pcard4.setVisibility(View.INVISIBLE);
-        TextView pcard5 = findViewById(R.id.player_card_5);
-        pcard5.setVisibility(View.INVISIBLE);
-         */
-
         startGame();
 
         Button HitButton = findViewById(R.id.hit_button);
@@ -61,15 +45,6 @@ public class MainActivity extends AppCompatActivity {
                 startGame();
             }
         });
-
-        /*
-        TextView loser = findViewById(R.id.label_loser);
-        loser.setVisibility(View.INVISIBLE);
-        TextView winner = findViewById(R.id.label_winner);
-        winner.setVisibility(View.INVISIBLE);
-        TextView tie = findViewById(R.id.label_tie);
-        tie.setVisibility(View.INVISIBLE);
-        */
     }
 
     public void clear()
@@ -131,6 +106,5 @@ public class MainActivity extends AppCompatActivity {
         deal(bjGame.deck);
 
     }
-
 
 }
