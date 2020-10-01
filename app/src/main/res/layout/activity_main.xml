@@ -50,40 +50,6 @@
 
 
     <TextView
-        android:id = "@+id/dealer_score"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:padding="10dp"
-
-        android:layout_marginTop = "180dp"
-        android:layout_marginLeft = "15dp"
-        android:layout_marginBottom = "10dp"
-
-        android:text="@string/total"
-        android:textSize="36sp"
-
-        android:layout_marginStart="15dp"
-        tools:ignore="RelativeOverlap"
-        />
-
-    <TextView
-        android:id = "@+id/player_score"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:padding="10dp"
-
-        android:layout_marginTop = "500dp"
-        android:layout_marginLeft = "15dp"
-        android:layout_marginBottom = "10dp"
-
-        android:text="@string/total"
-        android:textSize="36sp"
-
-        android:layout_marginStart="15dp"
-        tools:ignore="RelativeOverlap"
-        />
-
-    <TextView
         android:id = "@+id/player_card_1"
         style = "@style/PlayerCard"
 

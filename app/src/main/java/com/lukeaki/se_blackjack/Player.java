@@ -59,6 +59,16 @@ public class Player{
         return handSize;
     }
 
+    public void setHandValue(int newvalue)
+    {
+        handValue = newvalue;
+    }
+
+    public void setHandSize(int newsize)
+    {
+        handSize = newsize;
+    }
+
     /**
     *Method to empty the players  
     */

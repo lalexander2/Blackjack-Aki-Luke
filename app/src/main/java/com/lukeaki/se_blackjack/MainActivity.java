@@ -24,36 +24,50 @@ public class MainActivity extends AppCompatActivity {
 
         startGame();
 
-        Button HitButton = findViewById(R.id.hit_button);
-        HitButton.setOnClickListener(new View.OnClickListener() {
+        final Button HITBUTTON = findViewById(R.id.hit_button);
+        HITBUTTON.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 bjGame.hit(user);
+
             }
         });
 
-        Button StopButton = findViewById(R.id.stop_button);
-        StopButton.setOnClickListener(new View.OnClickListener() {
+        final Button STOPBUTTON = findViewById(R.id.stop_button);
+        STOPBUTTON.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                bjGame.playDealer();
+                Player winning = bjGame.playDealer();
+                if (winning.equals(user))
+                {
+                    TextView winner = findViewById(R.id.label_winner);
+                    winner.setVisibility(View.VISIBLE);
+                    HITBUTTON.setEnabled(false);
+                    STOPBUTTON.setEnabled(false);
+                }
+                else if(winning.equals(dealer))
+                {
+                    TextView loser = findViewById(R.id.label_loser);
+                    loser.setVisibility(View.VISIBLE);
+                    HITBUTTON.setEnabled(false);
+                    STOPBUTTON.setEnabled(false);
+                }
+                else
+                {
+                    TextView tie = findViewById(R.id.label_tie);
+                    tie.setVisibility(View.INVISIBLE);
+                }
             }
         });
 
         Button NGButton = findViewById(R.id.newgame_button);
         NGButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                // get rid of all the old stuff
+                bjGame.clear();
                 startGame();
             }
         });
     }
 
-    public void clear()
-    {
-        // user.emptyHand();
-        // dealer.emptyHand();
-        // make sure hand values are updated to 0
-        // make sure hand size is reset to 0
-    }
+
 
     public void deal(Deck deck)
     {
@@ -103,8 +117,14 @@ public class MainActivity extends AppCompatActivity {
         TextView tie = findViewById(R.id.label_tie);
         tie.setVisibility(View.INVISIBLE);
 
-        deal(bjGame.deck);
+        final Button HITBUTTON = findViewById(R.id.hit_button);
+        final Button STOPBUTTON = findViewById(R.id.stop_button);
+        HITBUTTON.setEnabled(true);
+        STOPBUTTON.setEnabled(true);
 
+        deal(bjGame.deck);
+        int userbj = bjGame.bjTest(user);
+        int dealerbj = bjGame.bjTest(dealer);
     }
 
 }

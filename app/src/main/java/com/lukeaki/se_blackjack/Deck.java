@@ -46,7 +46,7 @@ public class Deck {
                 switch(j)
                 {
                     case 1:
-                        value = 1;
+                        value = 11;
                         rank = "Ace";
                         break;
                     case 2:

@@ -44,7 +44,7 @@ public class GameController
 
     /**
     * Method to receive another card from the deck
-    * @param Player who is hitting  
+    * @param hitter who is hitting
     */
     public Card hit(Player hitter)
     {
@@ -61,13 +61,13 @@ public class GameController
     * I think this gets called when the stop button is pressed
     * Method that gets called when the player is done drawing more hards
     */
-    public void playDealer()
+    public Player playDealer()
     {
         while((dealer.getHandValue() < user.getHandValue()) && (dealer.getHandSize() < 5))
         {
             dealer.newCard(deck);
         }
-        checkWinner();
+        return checkWinner();
     }
 
     /**
@@ -117,5 +117,15 @@ public class GameController
         {
             return null;
         }
+    }
+
+    public void clear()
+    {
+        user.emptyHand();
+        dealer.emptyHand();
+        user.setHandValue(0);
+        dealer.setHandValue(0);
+        user.setHandSize(0);
+        dealer.setHandSize(0);
     }
 }
