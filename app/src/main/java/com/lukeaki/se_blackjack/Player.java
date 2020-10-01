@@ -11,7 +11,9 @@ public class Player{
     /* 
     Initiating a Value of Cards
     */
-    int CardValue;
+    int handValue;
+
+    int handSize;
 
     /* 
     Initiating a collection of card objects
@@ -19,31 +21,33 @@ public class Player{
     private ArrayList<Card> hand;
 
 
+    public Player()
+    {
+        hand = new ArrayList<Card>();
+        handValue = 0;
+        handSize = 0;
+    }
     
     /* 
     Method to add a card object to a players hand
     */
-    public int hit(Deck deck)
+    public Card newCard(Deck deck)
     {
-        hand.add(deck.drawCard());
-        int Cardsum = hand.handValue();
-        return Cardsum;
-
-    }
-    /*
-     Method to calculate the Value of a Hand
-      */
-    public int handValue(Hand hand)
-    {
-        // Initialize Hand Value 
-        int Cardsum;
-        
-        for (Card card : hand )
-        {
-            Cardsum += card.getValue();
-        }
-        return Cardsum;
+        Card drawn = deck.drawCard();
+        hand.add(drawn);
+        handValue = handValue + drawn.getValue();
+        handSize++;
+        return drawn;
     }
 
-    
+    public int getHandValue()
+    {
+        return handValue;
+    }
+
+    public int getHandSize()
+    {
+        return handSize;
+    }
+
 }

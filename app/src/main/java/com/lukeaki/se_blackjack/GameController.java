@@ -4,6 +4,8 @@
 
 package com.lukeaki.se_blackjack;
 
+import java.util.concurrent.TimeUnit;
+
 public class GameController
 {
     Player user;
@@ -20,49 +22,72 @@ public class GameController
     public void deal()
     {
         // deal 2 cards to player and dealer
-        user.hit(deck);
-        dealer.hit(deck);
-        user.hit(deck);
-        dealer.hit(deck);
+        user.newCard(deck);
+        dealer.newCard(deck);
+        user.newCard(deck);
+        dealer.newCard(deck);
     }
 
-    public void hit(Player hitter)
+    public Card hit(Player hitter)
     {
-        // draw a card, add it to hitter's hand, update value and check for a bust
+        // WHEREVER HIT IS CALLED:
+        // check for a bust
         // if bust, checkwinner()
         // check handsize, if = 5 then stop
+
+        Card drawn = hitter.newCard(deck);
+        return drawn;
     }
 
-    public void stop()
+    // I think this gets called when the stop button is pressed
+    public void playDealer() throws InterruptedException
     {
-
+        while((dealer.getHandValue() < user.getHandValue()) && (dealer.getHandSize() < 5))
+        {
+            dealer.newCard(deck);
+            Thread.sleep(1500);
+        }
     }
 
-    public int bjTest()
+    // returns 0 for regular hand, 1 for blackjack
+    public int bjTest(Player hand)
     {
         int bjack = 0;
 
-        if (//player hand value = false)
-        // {
-        //      bjack = true
-        // }
+        if (hand.getHandValue() == 21)
+        {
+             bjack = 1;
+        }
+
         return bjack;
     }
 
-    public void checkWinner()
+    // returns 0 for non-bust, 1 for bust
+    public int bustTest(Player hand)
     {
-        if (//user hand value > dealer hand value OR dealer hand value > 21)
+        int bust = 0;
+        if (hand.getHandValue() > 21)
         {
-             // user wins
-             // disable hit/stop,
+            bust = 1;
         }
-        else if (//user hand value < dealer hand value OR user hand value > 21)
+        return bust;
+    }
+
+    public Player checkWinner()
+    {
+        int userVal = user.getHandValue();
+        int dealerVal = dealer.getHandValue();
+        if ((userVal > dealerVal || dealerVal > 21) && (userVal < 21))
         {
-            // dealer wins
+            return user;
+        }
+        else if (userVal < dealerVal || userVal > 21)
+        {
+            return dealer;
         }
         else
         {
-            // game is a tie
+            return null;
         }
     }
 }
