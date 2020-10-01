@@ -40,13 +40,13 @@ public class GameController
     }
 
     // I think this gets called when the stop button is pressed
-    public void playDealer() throws InterruptedException
+    public void playDealer()
     {
         while((dealer.getHandValue() < user.getHandValue()) && (dealer.getHandSize() < 5))
         {
             dealer.newCard(deck);
-            Thread.sleep(1500);
         }
+        checkWinner();
     }
 
     // returns 0 for regular hand, 1 for blackjack
