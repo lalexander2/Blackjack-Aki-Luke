@@ -27,21 +27,29 @@ public class MainActivity extends AppCompatActivity {
         final Button HITBUTTON = findViewById(R.id.hit_button);
         HITBUTTON.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                bjGame.hit(user);
+                Card card = bjGame.hit(user);
+                int bust = bjGame.bustTest(user);
+                if (bust == 1)
+                {
+                    bjGame.checkWinner();
+                }
                 if (user.getHandSize() == 3)
                 {
                     TextView pcard3 = findViewById(R.id.player_card_3);
                     pcard3.setVisibility(View.VISIBLE);
+                    pcard3.setText(card.toString());
                 }
                 if (user.getHandSize() == 4)
                 {
                     TextView pcard4 = findViewById(R.id.player_card_4);
                     pcard4.setVisibility(View.VISIBLE);
+                    pcard4.setText(card.toString());
                 }
                 if (user.getHandSize() == 5)
                 {
                     TextView pcard5 = findViewById(R.id.player_card_5);
                     pcard5.setVisibility(View.VISIBLE);
+                    pcard5.setText(card.toString());
                 }
             }
         });
@@ -49,7 +57,29 @@ public class MainActivity extends AppCompatActivity {
         final Button STOPBUTTON = findViewById(R.id.stop_button);
         STOPBUTTON.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Player winning = bjGame.playDealer();
+                while((dealer.getHandValue() < user.getHandValue()) && (dealer.getHandSize() < 5) && (user.getHandValue() <= 21))
+                {
+                    Card card = bjGame.playDealer();
+                    if (dealer.getHandSize() == 3)
+                    {
+                        TextView dcard3 = findViewById(R.id.dealer_card_3);
+                        dcard3.setVisibility(View.VISIBLE);
+                        dcard3.setText(card.toString());
+                    }
+                    if (user.getHandSize() == 4)
+                    {
+                        TextView dcard4 = findViewById(R.id.dealer_card_4);
+                        dcard4.setVisibility(View.VISIBLE);
+                        dcard4.setText(card.toString());
+                    }
+                    if (user.getHandSize() == 5)
+                    {
+                        TextView dcard5 = findViewById(R.id.dealer_card_5);
+                        dcard5.setVisibility(View.VISIBLE);
+                        dcard5.setText(card.toString());
+                    }
+                }
+                Player winning = bjGame.checkWinner();
                 if (winning.equals(user))
                 {
                     TextView winner = findViewById(R.id.label_winner);
@@ -67,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
                 else
                 {
                     TextView tie = findViewById(R.id.label_tie);
-                    tie.setVisibility(View.INVISIBLE);
+                    tie.setVisibility(View.VISIBLE);
                 }
             }
         });
@@ -75,7 +105,6 @@ public class MainActivity extends AppCompatActivity {
         Button NGButton = findViewById(R.id.newgame_button);
         NGButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                bjGame.clear();
                 startGame();
             }
         });

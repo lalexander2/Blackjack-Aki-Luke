@@ -51,9 +51,9 @@ public class Card {
         suit = x;
     }
 
-    /** */ 
+    /**
     * Setter setting a Rank to a Card object
-    * @param String
+    * @param x
     */
 
     public void setRank(String x)
@@ -63,7 +63,7 @@ public class Card {
 
     /**  
     * Setter setting a Value to a Card object
-    * @param Int Value of Card
+    * @param x Value of Card
     */
 
     public void setValue(int x)

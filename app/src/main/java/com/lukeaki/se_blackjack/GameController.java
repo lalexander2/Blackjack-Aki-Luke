@@ -48,26 +48,16 @@ public class GameController
     */
     public Card hit(Player hitter)
     {
-        // WHEREVER HIT IS CALLED:
-        // check for a bust
-        // if bust, checkwinner()
-        // check handsize, if = 5 then stop
-
-        Card drawn = hitter.newCard(deck);
-        return drawn;
+        return hitter.newCard(deck);
     }
 
     /**
     * I think this gets called when the stop button is pressed
     * Method that gets called when the player is done drawing more hards
     */
-    public Player playDealer()
+    public Card playDealer()
     {
-        while((dealer.getHandValue() < user.getHandValue()) && (dealer.getHandSize() < 5))
-        {
-            dealer.newCard(deck);
-        }
-        return checkWinner();
+        return hit(dealer);
     }
 
     /**
@@ -105,17 +95,17 @@ public class GameController
     {
         int userVal = user.getHandValue();
         int dealerVal = dealer.getHandValue();
-        if ((userVal > dealerVal || dealerVal > 21) && (userVal < 21))
+        if ((userVal > dealerVal || dealerVal > 21) && (userVal <= 21))
         {
             return user;
         }
-        else if (userVal < dealerVal || userVal > 21)
+        else if ((userVal < dealerVal || userVal > 21) && (dealerVal <= 21))
         {
             return dealer;
         }
         else
         {
-            return null;
+            return new Player();
         }
     }
 
