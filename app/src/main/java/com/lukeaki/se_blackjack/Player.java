@@ -59,4 +59,16 @@ public class Player{
         return handSize;
     }
 
+    /**
+    *Method to empty the players  
+    */
+    public void emptyHand()
+    {
+        for(Card card : hand)
+        {
+            hand.remove(card);
+        }
+
+    }
+
 }
