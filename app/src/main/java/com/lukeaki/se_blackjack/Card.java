@@ -5,16 +5,24 @@
 package com.lukeaki.se_blackjack;
 
 public class Card {
-    // Give a card a value
+    /**
+    * The value of the card integer
+    */
     private int value;
 
-    // Give a card a suit
+    /**
+    * The suit of the card string
+    */
     private String suit;
 
-    // Give a card a rank
+    /**
+    * The rank of the card string
+    */
     private String rank;
 
-    // Card Constructor
+    /**
+    * A constructor for the card class
+    */
     Card(String suit, int value, String rank)
     {
         this.rank = rank;
@@ -22,7 +30,9 @@ public class Card {
         this.value = value;
     }
 
-    // To String Method 
+    /**
+    * To string method for the class Card
+     */
     public String toString()
     {
         return this.rank + " of " + this.suit;
@@ -61,18 +71,23 @@ public class Card {
         value = x;
     }
 
-    // Getters
-
+    /**
+    * Method to return the suit of the card
+    */
     public String getSuit()
     {
         return suit;
     }
-
+    /**
+    * Method to return the rank of the card
+    */
     public String getRank()
     {
         return rank;
     }
-
+    /**
+    * Method to return the value of the card
+    */
     public int getValue()
     {
         return value;
