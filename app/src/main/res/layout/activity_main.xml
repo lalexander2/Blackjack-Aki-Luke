@@ -90,6 +90,8 @@
         android:layout_toLeftOf="@id/player_card_2"
         android:layout_toStartOf="@id/player_card_2"
         android:layout_below="@id/dealer_card_1"
+
+        android:text =
         />
 
     <TextView

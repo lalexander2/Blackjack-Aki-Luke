@@ -19,15 +19,6 @@ public class GameController
         deck = new Deck();
     }
 
-    public void deal()
-    {
-        // deal 2 cards to player and dealer
-        user.newCard(deck);
-        dealer.newCard(deck);
-        user.newCard(deck);
-        dealer.newCard(deck);
-    }
-
     public Card hit(Player hitter)
     {
         // WHEREVER HIT IS CALLED:
@@ -42,7 +33,7 @@ public class GameController
     // I think this gets called when the stop button is pressed
     public void playDealer()
     {
-        while((dealer.getHandValue() < user.getHandValue()) && (dealer.getHandSize() < 5))
+        while((dealer.getHandValue() < user.getHandValue()) && (dealer.getHandSize() < 5) && (dealer.getHandValue() < 21))
         {
             dealer.newCard(deck);
         }
