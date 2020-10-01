@@ -28,7 +28,21 @@ public class MainActivity extends AppCompatActivity {
         HITBUTTON.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 bjGame.hit(user);
-
+                if (user.getHandSize() == 3)
+                {
+                    TextView pcard3 = findViewById(R.id.player_card_3);
+                    pcard3.setVisibility(View.VISIBLE);
+                }
+                if (user.getHandSize() == 4)
+                {
+                    TextView pcard4 = findViewById(R.id.player_card_4);
+                    pcard4.setVisibility(View.VISIBLE);
+                }
+                if (user.getHandSize() == 5)
+                {
+                    TextView pcard5 = findViewById(R.id.player_card_5);
+                    pcard5.setVisibility(View.VISIBLE);
+                }
             }
         });
 
