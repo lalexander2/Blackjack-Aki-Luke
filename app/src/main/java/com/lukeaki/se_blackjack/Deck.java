@@ -13,8 +13,9 @@ public class Deck {
     private final int NUM_SUITS = 4;
     private final int NUM_RANKS = 13;
 
-    // METHODS:
-    // Deck() : Constructor, fills the "cards" array with card objects
+    /** 
+    *Deck() : Constructor, fills the "cards" array with card objects
+    */
     public Deck()
     {
         cards = new ArrayList<Card>();
@@ -103,7 +104,9 @@ public class Deck {
         }
         shuffle();
     }
-
+    /**
+    * Method to display all the cards in the deck to the screen
+     */
     public void printWholeDeck(){
         for (int i = 0; i < cards.size(); i++)
         {
@@ -111,7 +114,9 @@ public class Deck {
         }
     }
 
-    // shuffle() : Called on initialization and after each round
+    /**
+    * Method that shuffles cards happens on initialization and after each round
+    */
     public void shuffle()
     {
         Random randy = new Random();
@@ -125,7 +130,9 @@ public class Deck {
         }
     }
 
-    // Draw a Card
+    /**
+    * Method that removes the first card from the deck and returns it
+     */
     public Card drawCard()
     {
         Card tempCard = cards.get(0);

@@ -8,19 +8,24 @@ import java.util.ArrayList;
 
 public class Player{
 
-    /* 
-    Initiating a Value of Cards
+    /** 
+    * Value of the Cards Hand
     */
-    int handValue;
 
+    int handValue;
+    /** 
+    * Value of the Cards Hand
+    */
     int handSize;
 
-    /* 
-    Initiating a collection of card objects
+    /** 
+    *Initiating a collection of card objects
     */
     private ArrayList<Card> hand;
 
-
+    /**
+    * Constructor for the Player class
+     */
     public Player()
     {
         hand = new ArrayList<Card>();
@@ -28,8 +33,8 @@ public class Player{
         handSize = 0;
     }
     
-    /* 
-    Method to add a card object to a players hand
+    /**
+    *Method to add a card object to a players hand
     */
     public Card newCard(Deck deck)
     {
@@ -39,12 +44,16 @@ public class Player{
         handSize++;
         return drawn;
     }
-
+    /**
+    * Method to get the value of a players hand
+     */
     public int getHandValue()
     {
         return handValue;
     }
-
+    /**
+    * Method to get the amount of cards in a players hand
+     */
     public int getHandSize()
     {
         return handSize;
